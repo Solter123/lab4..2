@@ -47,19 +47,19 @@ int main()
             begin = add(begin, ss);//        добавляем в стек
         }//        если символ математическое действие
     }//        проход по строке
-    while (begin != NULL) {
-        begin = del(begin, &a);
-        OutStr += a;
-    }
-    std::cout << "Обратная польская запись: " << OutStr << std::endl;
-    std::cout << "Значения переменных: " << std::endl;
-    char ch;
-    for (int i = 0; i < kol; i++) {
-        ch = znach[i];
-        switch (ch) {
-        case 'a':
-            mas[int(ch)] = 8.5;
-            break;
+    while (begin != NULL) {//        пока стек не пустой
+        begin = del(begin, &a);//        удаляем из стека
+        OutStr += a;//        переменную a записываем в OutStr
+    }//        пока стек не пустой
+    std::cout << "Обратная польская запись: " << OutStr << std::endl;//    вывод обратной польской записи
+    std::cout << "Значения переменных: " << std::endl;//    вывод значений переменных
+    char ch;//        переменная для хранения буквы
+    for (int i = 0; i < kol; i++) {//    проход по строке
+        ch = znach[i];//        записываем в ch очередную букву
+        switch (ch) {//        в зависимости от буквы
+        case 'a'://        если буква a
+            mas[int(ch)] = 8.5;//        записываем в массив значений
+            break;//        прерываем цикл
         case 'b':
             mas[int(ch)] = 0.3;
             break;
