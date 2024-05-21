@@ -1,31 +1,31 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <string>
 
 
-struct Stack { // структура стека
-    char info; // информационное поле
-    Stack* next;// указатель на следующую структуру
+struct Stack { // СЃС‚СЂСѓРєС‚СѓСЂР° СЃС‚РµРєР°
+    char info; // РёРЅС„РѕСЂРјР°С†РёРѕРЅРЅРѕРµ РїРѕР»Рµ
+    Stack* next;// СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂСѓРєС‚СѓСЂСѓ
 };
 
 
-int prioritet(char);// определение приоритета
-Stack* add(Stack, char);//    добавление элемента в стек
-Stack del(Stack, char);//    удаление элемента из стека
-void result(std::string, Stack*);    // решение выражения
-char znach[] = { 'a', 'b', 'c', 'd', 'e' };//    буквы
-int kol;// количество букв
-double mas[5];//    массив значений
+int prioritet(char);// РѕРїСЂРµРґРµР»РµРЅРёРµ РїСЂРёРѕСЂРёС‚РµС‚Р°
+Stack* add(Stack, char);//    РґРѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ СЃС‚РµРє
+Stack del(Stack, char);//    СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· СЃС‚РµРєР°
+void result(std::string, Stack*);    // СЂРµС€РµРЅРёРµ РІС‹СЂР°Р¶РµРЅРёСЏ
+char znach[] = { 'a', 'b', 'c', 'd', 'e' };//    Р±СѓРєРІС‹
+int kol;// РєРѕР»РёС‡РµСЃС‚РІРѕ Р±СѓРєРІ
+double mas[5];//    РјР°СЃСЃРёРІ Р·РЅР°С‡РµРЅРёР№
 
 int main()
 {
-    setlocale(0, "ru");
-    Stack* begin = NULL;
-    char ss;
-    char a = ' ';
-    std::string InStr = "a/(b*(c+d))-e", OutStr;
-    std::cout << "Изначальная запись: " << InStr << std::endl;
-    for (int k = 0; k < InStr.size(); k++) {
-        ss = InStr[k];
+    setlocale(0, "ru");//    СѓСЃС‚Р°РЅРѕРІРєР° СЂСѓСЃСЃРєРѕРіРѕ СЏР·С‹РєР°
+    Stack* begin = NULL;//    СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЃС‚РµРєР°
+    char ss;//        СЃРёРјРІРѕР»
+    char a = ' ';//        РїСЂРѕРјРµР¶СѓС‚РѕС‡РЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ
+    std::string InStr = "a/(b*(c+d))-e", OutStr;//    СЃС‚СЂРѕРєР° РґР»СЏ РѕР±СЂР°С‚РЅРѕР№ РїРѕР»СЊСЃРєРѕРёМ† Р·Р°РїРёСЃРё
+    std::cout << "РР·РЅР°С‡Р°Р»СЊРЅР°СЏ Р·Р°РїРёСЃСЊ: " << InStr << std::endl;//    РІС‹РІРѕРґ РёР·РЅР°С‡Р°Р»СЊРЅРѕР№ Р·Р°РїРёСЃРё
+    for (int k = 0; k < InStr.size(); k++) {//    РїСЂРѕС…РѕРґ РїРѕ СЃС‚СЂРѕРєРµ
+        ss = InStr[k];//        Р·Р°РїРёСЃС‹РІР°РµРј РІ ss РѕС‡РµСЂРµРґРЅС‹Р№ СЌР»РµРјРµРЅС‚ РёР· СЃС‚СЂРѕРєРё
         if (ss == '(')
             begin = add(begin, ss);
         if (ss == ')') {
@@ -51,8 +51,8 @@ int main()
         begin = del(begin, &a);
         OutStr += a;
     }
-    std::cout << "Обратная польская запись: " << OutStr << std::endl;
-    std::cout << "Значения переменных: " << std::endl;
+    std::cout << "РћР±СЂР°С‚РЅР°СЏ РїРѕР»СЊСЃРєР°СЏ Р·Р°РїРёСЃСЊ: " << OutStr << std::endl;
+    std::cout << "Р—РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С…: " << std::endl;
     char ch;
     for (int i = 0; i < kol; i++) {
         ch = znach[i];
@@ -124,7 +124,7 @@ void result(std::string opz, Stack* begin) {
             chr++;
         }
     }
-    std::cout << "Результат: " << rez << std::endl;
+    std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << rez << std::endl;
     return;
 }
 Stack* del(Stack* p, char* out) {
