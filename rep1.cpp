@@ -128,11 +128,11 @@ void result(std::string opz, Stack* begin) {// вычисление
     std::cout << "Результат: " << rez << std::endl;//вывод результата
     return;//возврат
 }//процедура вычисления
-Stack* del(Stack* p, char* out) {
-    Stack* t = p;
-    (*out) = p->info;
-    p = p->next;
-    delete t;
+Stack* del(Stack* p, char* out) {//удаление из стека
+    Stack* t = p;//    промежуточная переменная
+    (*out) = p->info;//    передача значения из стека в out
+    p = p->next;//    передача указателя на следующую структуру в p
+    delete t;//    удаление структуры
     return p;
 }
 Stack* add(Stack* p, char in) {
