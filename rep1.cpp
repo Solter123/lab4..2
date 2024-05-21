@@ -73,12 +73,12 @@ int main()
             mas[int(ch)] = 1.6;//        записываем в массив значений
             break; //
         }//
-        std::cout << znach[i] << " = " << mas[int(ch)] << std::endl;
-    }
-    result(OutStr, begin);
-    system("pause");
-    return 0;
-}
+        std::cout << znach[i] << " = " << mas[int(ch)] << std::endl; //    вывод значений переменных
+    }//        пока не встретим открывающую скобку
+    result(OutStr, begin);//    вызов функции result
+    system("pause");//    задержка экрана
+    return 0;//    выход из программы
+}//        пока не встретим открывающую скобку
 int prioritet(char a) {
     switch (a) {
     case '^':
