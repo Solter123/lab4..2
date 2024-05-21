@@ -26,19 +26,19 @@ int main()
     std::cout << "Изначальная запись: " << InStr << std::endl;//    вывод изначальной записи
     for (int k = 0; k < InStr.size(); k++) {//    проход по строке
         ss = InStr[k];//        записываем в ss очередный элемент из строки
-        if (ss == '(')
-            begin = add(begin, ss);
-        if (ss == ')') {
-            while ((begin->info) != '(') {
-                begin = del(begin, &a);
-                OutStr += a;
-            }
-            begin = del(begin, &a);
-        }
-        if (ss >= 'a' && ss <= 'z') {
-            kol++;
-            OutStr += ss;
-        }
+        if (ss == '(')//        если символ открывающая скобка
+            begin = add(begin, ss);//        добавляем в стек
+        if (ss == ')') {//        если символ закрывающая скобка
+            while ((begin->info) != '(') {//        пока не встретим открывающую скобку
+                begin = del(begin, &a);//        удаляем из стека
+                OutStr += a;//        переменную a записываем в OutStr
+            }//        пока не встретим открывающую скобку
+            begin = del(begin, &a);//        удаляем открывающую скобку из стека
+        }//        пока не встретим открывающую скобку
+        if (ss >= 'a' && ss <= 'z') {//        если символ буква
+            kol++;//        увеличиваем количество букв
+            OutStr += ss;//        переменную ss записываем в OutStr
+        }//        если символ буква
         if (ss == '*' or ss == '/' or ss == '+' or ss == '-' or ss == '^') {
             while (begin != NULL && prioritet(begin->info) >= prioritet(ss)) {
                 begin = del(begin, &a);
