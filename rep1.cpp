@@ -103,14 +103,14 @@ void result(std::string opz, Stack* begin) {// вычисление
         if (ch >= 'a' && ch <= 'z') {//        промежуточная переменная
             begin = add(begin, ch);//        промежуточная переменная
         }//        промежуточная переменная
-        else {
-            begin = del(begin, &ch1);
-            begin = del(begin, &ch2);
-            op1 = mas[int(ch1)];
-            op2 = mas[int(ch2)];
-            switch (ch) {
-            case '+': rez = op2 + op1;
-                break;
+        else {//        промежуточная переменная
+            begin = del(begin, &ch1);//        промежуточная переменная
+            begin = del(begin, &ch2);//        промежуточная переменная
+            op1 = mas[int(ch1)];//        промежуточная переменная
+            op2 = mas[int(ch2)];//        промежуточная переменная
+            switch (ch) {//        промежуточная переменная
+            case '+': rez = op2 + op1;//        промежуточная переменная
+                break;//        промежуточная переменная
             case '-': rez = op2 - op1;
                 break;
             case '*': rez = op2 * op1;
