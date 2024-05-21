@@ -2,10 +2,11 @@
 #include <string>
 
 
-struct Stack {
-    char info;
-    Stack* next;
+struct Stack { // структура стека
+    char info; // информационное поле
+    Stack* next;// указатель на следующую структуру
 };
+
 
 int prioritet(char);
 Stack* add(Stack*, char);
@@ -138,4 +139,4 @@ Stack* add(Stack* p, char in) {
     t->info = in;
     t->next = p;
     return t;
-}// test
+}
