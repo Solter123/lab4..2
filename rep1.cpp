@@ -79,18 +79,19 @@ int main()
     system("pause");//    задержка экрана
     return 0;//    выход из программы
 }//        пока не встретим открывающую скобку
-int prioritet(char a) {
-    switch (a) {
-    case '^':
-        return 4;
-    case '*': case '/':
-        return 3;
-    case '-': case '+':
-        return 2;
-    case '(':
-        return 1;
-    }
-    return 0;
+int prioritet(char a) {// определение приоритета
+    switch (a) {// приоритеты
+    case '^'://        степень
+        return 4;//        +
+    case '*': case '/'://        умножение и деление
+        return 3;//        /
+    case '-': case '+'://        вычитание и сложение
+        return 2;//        *
+    case '('://        открывающая скобка
+        return 1;//        (
+    }// приоритеты
+    return 0;//        закрывающая скобка
+}// определение приоритета
 }
 void result(std::string opz, Stack* begin) {
     begin = NULL;
