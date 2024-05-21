@@ -93,16 +93,16 @@ int prioritet(char a) {// определение приоритета
     return 0;//        закрывающая скобка
 }// определение приоритета
 }
-void result(std::string opz, Stack* begin) {
-    begin = NULL;
-    char ch, ch1 = ' ', ch2 = ' ';
-    double op1 = 0, op2 = 0, rez = 0;
-    char chr = 'z' + 1;
-    for (int i = 0; i < opz.size(); i++) {
-        ch = opz[i];
-        if (ch >= 'a' && ch <= 'z') {
-            begin = add(begin, ch);
-        }
+void result(std::string opz, Stack* begin) {// вычисление
+    begin = NULL;// очистка стека
+    char ch, ch1 = ' ', ch2 = ' ';//        промежуточные переменные
+    double op1 = 0, op2 = 0, rez = 0;//        промежуточные переменные
+    char chr = 'z' + 1;//        промежуточная переменная
+    for (int i = 0; i < opz.size(); i++) {//    проход по строке
+        ch = opz[i];//        промежуточная переменная
+        if (ch >= 'a' && ch <= 'z') {//        промежуточная переменная
+            begin = add(begin, ch);//        промежуточная переменная
+        }//        промежуточная переменная
         else {
             begin = del(begin, &ch1);
             begin = del(begin, &ch2);
