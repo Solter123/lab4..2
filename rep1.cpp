@@ -66,9 +66,9 @@ int main()
         case 'c'://        если буква c
             mas[int(ch)] = 2.4;//        записываем в массив значений
             break;//        прерываем цикл
-        case 'd':
-            mas[int(ch)] = 7.9;
-            break;
+        case 'd'://        если буква d
+            mas[int(ch)] = 7.9;//        записываем в массив значений
+            break;//        прерываем цикл
         case 'e':
             mas[int(ch)] = 1.6;
             break;
