@@ -111,19 +111,19 @@ void result(std::string opz, Stack* begin) {// вычисление
             switch (ch) {//        промежуточная переменная
             case '+': rez = op2 + op1;//        промежуточная переменная
                 break;//        промежуточная переменная
-            case '-': rez = op2 - op1;
-                break;
-            case '*': rez = op2 * op1;
-                break;
-            case '/': rez = op2 / op1;
-                break;
-            case '^': rez = pow(op2, op1);
-                break;
-            }
-            mas[int(chr)] = rez;
-            begin = add(begin, chr);
-            chr++;
-        }
+            case '-': rez = op2 - op1;//    вычитание
+                break;//        сложение
+            case '': rez = op2 op1;//    умножение
+                break;//        умножение
+            case '/': rez = op2 / op1;//    деление
+                break;//        степень
+            case '^': rez = pow(op2, op1);//    степень
+                break;//        открывающая скобка
+            }// приоритеты
+            mas[int(chr)] = rez;//    запись результата
+            begin = add(begin, chr);//    добавление в стек
+            chr++;//        переход на следующую цифру
+        }//        пока не встретим открывающую скобку
     }
     std::cout << "Результат: " << rez << std::endl;
     return;
