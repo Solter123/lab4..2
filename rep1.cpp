@@ -135,8 +135,8 @@ Stack* del(Stack* p, char* out) {//удаление из стека
     delete t;//    удаление структуры
     return p;
 }
-Stack* add(Stack* p, char in) {
-    Stack* t = new Stack;
+Stack* add(Stack* p, char in) {//добавление в стек
+    Stack* t = new Stack;//        указатель на новый элемент стека
     t->info = in;
     t->next = p;
     return t;
