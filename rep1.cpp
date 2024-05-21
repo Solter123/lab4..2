@@ -39,14 +39,14 @@ int main()
             kol++;//        увеличиваем количество букв
             OutStr += ss;//        переменную ss записываем в OutStr
         }//        если символ буква
-        if (ss == '*' or ss == '/' or ss == '+' or ss == '-' or ss == '^') {
-            while (begin != NULL && prioritet(begin->info) >= prioritet(ss)) {
-                begin = del(begin, &a);
-                OutStr += a;
-            }
-            begin = add(begin, ss);
-        }
-    }
+        if (ss == '*' or ss == '/' or ss == '+' or ss == '-' or ss == '^') {//        если символ математическое действие
+            while (begin != NULL && prioritet(begin->info) >= prioritet(ss)) {//        пока не встретим открывающую скобку
+                begin = del(begin, &a);//        удаляем из стека
+                OutStr += a;//        переменную a записываем в OutStr
+            }//        пока не встретим открывающую скобку
+            begin = add(begin, ss);//        добавляем в стек
+        }//        если символ математическое действие
+    }//        проход по строке
     while (begin != NULL) {
         begin = del(begin, &a);
         OutStr += a;
