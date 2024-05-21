@@ -69,10 +69,10 @@ int main()
         case 'd'://        если буква d
             mas[int(ch)] = 7.9;//        записываем в массив значений
             break;//        прерываем цикл
-        case 'e':
-            mas[int(ch)] = 1.6;
-            break;
-        }
+        case 'e'://        если буква e
+            mas[int(ch)] = 1.6;//        записываем в массив значений
+            break; //
+        }//
         std::cout << znach[i] << " = " << mas[int(ch)] << std::endl;
     }
     result(OutStr, begin);
