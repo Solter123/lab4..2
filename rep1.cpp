@@ -125,9 +125,9 @@ void result(std::string opz, Stack* begin) {// вычисление
             chr++;//        переход на следующую цифру
         }//        пока не встретим открывающую скобку
     }
-    std::cout << "Результат: " << rez << std::endl;
-    return;
-}
+    std::cout << "Результат: " << rez << std::endl;//вывод результата
+    return;//возврат
+}//процедура вычисления
 Stack* del(Stack* p, char* out) {
     Stack* t = p;
     (*out) = p->info;
