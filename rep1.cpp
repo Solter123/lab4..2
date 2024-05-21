@@ -8,13 +8,13 @@ struct Stack { // структура стека
 };
 
 
-int prioritet(char);
-Stack* add(Stack*, char);
-Stack* del(Stack*, char*);
-void result(std::string, Stack*);
-char znach[] = { 'a', 'b', 'c', 'd', 'e' };
-int kol;
-double mas[5];
+int prioritet(char);// определение приоритета
+Stack* add(Stack, char);//    добавление элемента в стек
+Stack del(Stack, char);//    удаление элемента из стека
+void result(std::string, Stack*);    // решение выражения
+char znach[] = { 'a', 'b', 'c', 'd', 'e' };//    буквы
+int kol;// количество букв
+double mas[5];//    массив значений
 
 int main()
 {
